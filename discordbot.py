@@ -36,6 +36,7 @@ async def SendMessage_1():
 async def SendMessage_2():
     await channel.send('@everyone\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
+bot.run(token)
 
 tasks.loop(seconds=60)
 async def time_check_1():
@@ -59,4 +60,3 @@ async def time_check_2():
 
 tasks.loop.start()
 
-bot.run(token)
