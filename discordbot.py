@@ -6,7 +6,6 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 CHANNEL_ID = 820269526733160451
 
-client = discord.Client()
 
 dateTimeList1 = [
 '2021/03/14 14:53',
