@@ -8,8 +8,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-channel = os.environ['CHANNEL_ID']
-
+channel = 820269526733160451
 
 dateTimeList_1 = ['2021/03/15 02:40:00', '2021/03/17 20:00:00', '2021/03/19 20:00:00', '2021/03/21 20:00:00', '2021/03/23 20:00:00', '2021/03/25 20:00:00', '2021/03/27 20:00:00', '2021/03/29 20:00:00', '2021/03/31 20:00:00']
 
