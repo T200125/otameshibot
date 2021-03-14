@@ -61,3 +61,4 @@ asyncio.run(time_check_1())
 asyncio.run(time_check_2())
 
 asyncio.get_event_loop()
+asyncio.get_running_loop()
