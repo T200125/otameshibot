@@ -44,7 +44,7 @@ async def time_check_1():
         print(now)
         await SendMessage_1()
 
-        await asyncio.sleep(60)
+        await sleep(60)
 
 @tasks.loop(seconds=60)
 async def time_check_2():
@@ -54,8 +54,9 @@ async def time_check_2():
         print(now)
         await SendMessage_2()
 
-        await asyncio.sleep(60)
+        await sleep(60)
 
-time_check.start()
+time_check_1.start()
+time_check_2.start()
 
 bot.run(token)
