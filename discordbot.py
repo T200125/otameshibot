@@ -66,5 +66,3 @@ loop_2.run()
 
 asyncio.run(time_check_1())
 asyncio.run(time_check_2())
-
-
