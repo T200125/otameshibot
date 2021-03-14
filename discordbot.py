@@ -4,6 +4,7 @@ import traceback
 import time
 from discord.ext import tasks
 from datetime import datetime
+import asyncio
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -14,6 +15,7 @@ dateTimeList_1 = ['2021/03/15 02:40:00', '2021/03/17 20:00:00', '2021/03/19 20:0
 
 dateTimeList_2 = ['2021/03/16 20:00:00', '2021/03/18 20:00:00', '2021/03/20 20:00:00', '2021/03/22 20:00:00', '2021/03/24 20:00:00', '2021/03/26 20:00:00', '2021/03/28 20:00:00', '2021/03/30 20:00:00']
 
+asyncio.run(main())
 
 bot.event
 async def on_command_error(ctx, error):
