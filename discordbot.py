@@ -59,4 +59,3 @@ async def time_check_2():
         await time.sleep(86100)
 
 tasks.loop.start()
-
