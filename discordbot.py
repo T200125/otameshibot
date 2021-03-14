@@ -4,6 +4,22 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+channel = os.environ['CHANNEL_ID']
+client = discord.Client()
+
+
+dateTimeList_1 = [
+'2021/03/15 20:00',
+'2021/03/17 20:00',
+'2021/03/19 20:00',
+'2021/03/21 20:00',
+'2021/03/23 20:00',
+'2021/03/25 20:00',
+'2021/03/27 20:00',
+'2021/03/29 20:00',
+'2021/03/31 20:00'
+]
+
 
 @bot.event
 async def on_command_error(ctx, error):
