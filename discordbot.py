@@ -17,14 +17,14 @@ dateTimeList_1 = ['2021/03/15 02:40', '2021/03/17 20:00', '2021/03/19 20:00', '2
 dateTimeList_2 = ['2021/03/16 20:00', '2021/03/18 20:00', '2021/03/20 20:00', '2021/03/22 20:00', '2021/03/24 20:00', '2021/03/26 20:00', '2021/03/28 20:00', '2021/03/30 20:00']
 
 
-@bot.event
+bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
 
-@bot.command()
+bot.command()
 async def ping(ctx):
     await ctx.send('pong')
 
@@ -37,7 +37,7 @@ async def SendMessage_2():
     await channel.send('@everyone\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
 
-@tasks.loop(seconds=60)
+tasks.loop(seconds=60)
 async def time_check_1():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
@@ -47,7 +47,7 @@ async def time_check_1():
 
         await time.sleep(60)
 
-@tasks.loop(seconds=60)
+tasks.loop(seconds=60)
 async def time_check_2():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
