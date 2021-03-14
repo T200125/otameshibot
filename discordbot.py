@@ -46,18 +46,18 @@ async def SendMessage1():
     channel = client.get_channel(CHANNEL_ID)
     await channel.send('本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
-# 30秒に一回ループ
+
 @tasks.loop(seconds=60)
 async def time_check():
     sleepTime = 0
-    # 現在の時刻
+   
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     if now in dateTimeList :
         print(now)
         await SendMessage()
-        #該当時間だった場合は２重に投稿しないよう３０秒余計に待機
+        
         await asyncio.sleep(86100)
-#ループ処理実行
+
 loop.start()
 
 bot.run(token)
