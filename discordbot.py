@@ -47,9 +47,6 @@ async def time_check_1():
 
         await time.sleep(10)
 
-loop_1 = asyncio.get_event_loop()
-loop_1.run()
-
 tasks.loop(seconds=1)
 async def time_check_2():
 
@@ -60,9 +57,7 @@ async def time_check_2():
 
         await time.sleep(87900)
 
-loop_2 = asyncio.get_event_loop()
-loop_2.run()
-
-
 asyncio.run(time_check_1())
 asyncio.run(time_check_2())
+
+asyncio.get_event_loop()
