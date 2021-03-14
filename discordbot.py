@@ -4,7 +4,7 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-
+channel = os.environ['CHANNEL_ID']
 
 
 dateTimeList1 = [
@@ -37,7 +37,6 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
- channel = client.get_channel(CHANNEL_ID)
 
 @bot.command()
 async def ping(ctx):
