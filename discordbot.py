@@ -8,7 +8,7 @@ channel = os.environ['CHANNEL_ID']
 
 
 dateTimeList1 = [
-'2021/03/14 14:53',
+'2021/03/14 15:25',
 '2021/03/16 20:00',
 '2021/03/18 20:00',
 '2021/03/20 20:00',
@@ -52,9 +52,9 @@ async def time_check():
     sleepTime = 0
    
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    if now in dateTimeList :
+    if now in dateTimeList1 :
         print(now)
-        await SendMessage()
+        await SendMessage1()
         
         await asyncio.sleep(86100)
 
