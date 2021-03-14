@@ -56,7 +56,7 @@ async def time_check():
         print(now)
         await SendMessage1()
         
-        await asyncio.sleep(86100)
+        await asyncio.sleep(60)
 
 loop.start()
 
