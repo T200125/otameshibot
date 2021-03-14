@@ -15,7 +15,6 @@ dateTimeList_1 = ['2021/03/15 02:40:00', '2021/03/17 20:00:00', '2021/03/19 20:0
 
 dateTimeList_2 = ['2021/03/16 20:00:00', '2021/03/18 20:00:00', '2021/03/20 20:00:00', '2021/03/22 20:00:00', '2021/03/24 20:00:00', '2021/03/26 20:00:00', '2021/03/28 20:00:00', '2021/03/30 20:00:00']
 
-asyncio.run(main())
 
 bot.event
 async def on_command_error(ctx, error):
@@ -59,4 +58,7 @@ async def time_check_2():
 
         await time.sleep(87900)
 
+asyncio.run(time_check_1())
+asyncio.run(time_check_2())
+        
 tasks.loop.start()
