@@ -1,6 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
+import datetime
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -43,7 +44,6 @@ async def ping(ctx):
     await ctx.send('pong')
 
 async def SendMessage1():
-    channel = client.get_channel(CHANNEL_ID)
     await channel.send('本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
 
