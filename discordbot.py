@@ -57,7 +57,6 @@ async def time_check_2():
 
         await time.sleep(86100)
 
-time_check_1.start()
-time_check_2.start()
+loop.start()
 
 bot.run(token)
