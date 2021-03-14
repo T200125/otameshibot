@@ -37,7 +37,7 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
+ channel = client.get_channel(CHANNEL_ID)
 
 @bot.command()
 async def ping(ctx):
@@ -50,7 +50,7 @@ async def time_check():
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     if now in dateTimeList1 :
         print(now)
-        await print(本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了)
+        await channel.send('本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
 
 #ループ処理実行
