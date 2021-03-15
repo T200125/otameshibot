@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 
 
 commands.command()
-async def ping(ctx):
+async def ping(self, ctx):
     await ctx.send('pong')
 
 
