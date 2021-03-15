@@ -21,11 +21,6 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-commands.command()
-async def ping(self, ctx):
-    await ctx.send('pong')
-
-
 async def SendMessage_1():
     await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
 
@@ -38,13 +33,17 @@ bot.run(token)
 tasks.loop(seconds=1)
 async def time_check_1():
 
+    print("確認１")
     now = datetime.now().strftime('%Y/%m/%d %H:%M:%S')
 
+    print("確認２")
     if now in dateTimeList_1:
         print(now)
         await SendMessage_1()
 
         await asyncio.sleep(87900)
+    else:
+        print("確認３")
 
 tasks.loop(seconds=1)
 async def time_check_2():
