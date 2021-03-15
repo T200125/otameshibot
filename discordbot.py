@@ -21,7 +21,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-bot.command()
+commands.command()
 async def ping(ctx):
     await ctx.send('pong')
 
@@ -58,4 +58,3 @@ async def time_check_2():
 
 asyncio.run(time_check_1())
 asyncio.run(time_check_2())
-asyncio.run(ping())
