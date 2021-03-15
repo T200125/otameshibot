@@ -1,9 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
-from discord.ext import tasks
 from datetime import datetime
-import asyncio
 import time
 
 bot = commands.Bot(command_prefix='/')
@@ -31,7 +29,9 @@ def SendMessage_1():
 def SendMessage_2():
     channel.send('@everyone\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
 
+    
 bot.run(token)
+
 
 def time_check_1():
 
@@ -56,7 +56,9 @@ def time_check_2():
 
         time.sleep(87900)
 
+
 month = 0
+
 
 while month < 4:
     time_check_1
