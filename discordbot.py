@@ -13,6 +13,7 @@ dateTimeList_1 = ['2021/03/15 20:00:00', '2021/03/17 20:00:00', '2021/03/19 20:0
 
 dateTimeList_2 = ['2021/03/16 20:00:00', '2021/03/18 20:00:00', '2021/03/20 20:00:00', '2021/03/22 20:00:00', '2021/03/24 20:00:00', '2021/03/26 20:00:00', '2021/03/28 20:00:00', '2021/03/30 20:00:00']
 
+print("確認0")
 
 bot.event
 async def on_command_error(ctx, error):
@@ -20,6 +21,7 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+print("確認") 
 
 async def SendMessage_1():
     await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
