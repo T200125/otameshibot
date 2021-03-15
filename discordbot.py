@@ -60,4 +60,5 @@ async def time_check_2():
 asyncio.run(time_check_1())
 asyncio.run(time_check_2())
 
+asyncio.get_running_loop()
 asyncio.all_tasks()
