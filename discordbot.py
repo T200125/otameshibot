@@ -41,7 +41,7 @@ def time_check_1():
     print("確認２")
     if now in dateTimeList_1:
         print(now)
-        await SendMessage_1()
+        SendMessage_1()
 
         time.sleep(30)
     else:
