@@ -6,7 +6,6 @@ from datetime import datetime
 import asyncio
 import discord
 
-client = discord.client()
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 channel = ("820269526733160451")
@@ -16,7 +15,7 @@ dateTimeList = ['2021/03/17 20:00', '2021/03/19 20:00', '2021/03/21 20:00', '202
 
 print("確認0")
 
-client.event
+bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
