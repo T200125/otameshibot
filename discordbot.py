@@ -27,7 +27,6 @@ async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
 
-
     if now in dateTimeList:
         if datetime.now().day % 2 == 0:
 
