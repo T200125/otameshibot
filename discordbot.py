@@ -25,7 +25,6 @@ bot.run(token)
 @tasks.loop(seconds=1)
 async def time_check():
 
-
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
 
     if now in dateTimeList:
