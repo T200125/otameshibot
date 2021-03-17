@@ -20,8 +20,6 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-bot.run(token)
-
 @tasks.loop(seconds=1)
 async def time_check():
 
@@ -41,3 +39,4 @@ async def time_check():
         return
 
 asyncio.run(time_check())
+bot.run(token)
