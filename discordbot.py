@@ -12,7 +12,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 channel = bot.get_channel(820269526733160451)
 
 
-dateTimeList = ['2021/03/18 20:00', '2021/03/19 20:00', '2021/03/21 20:00', '2021/03/23 20:00', '2021/03/25 20:00', '2021/03/27 20:00', '2021/03/29 20:00', '2021/03/31 20:00', '2021/03/18 20:00', '2021/03/20 20:00', '2021/03/22 20:00', '2021/03/24 20:00', '2021/03/26 20:00', '2021/03/28 20:00', '2021/03/30 20:00']
+dateTimeList = ['2021/03/18 20:04', '2021/03/19 20:00', '2021/03/21 20:00', '2021/03/23 20:00', '2021/03/25 20:00', '2021/03/27 20:00', '2021/03/29 20:00', '2021/03/31 20:00', '2021/03/18 20:00', '2021/03/20 20:00', '2021/03/22 20:00', '2021/03/24 20:00', '2021/03/26 20:00', '2021/03/28 20:00', '2021/03/30 20:00']
 
 
 @bot.event
@@ -21,29 +21,23 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    if message.content == '/neko':
-        await message.channel.send('にゃーん')
-
 @tasks.loop(seconds=1)
 async def time_check():
 
+    print("loopcheck1")
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
 
     if now in dateTimeList:
-
+        print("loopcheck2")
         if datetime.now().day % 2 == 0:
 
             print(now)
             await channel.send('@everyone\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
-            await asyncio.sleep(86100)
+            await asyncio.sleep(60)
         else:
             print(now)
             await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
-            await asyncio.sleep(86100)
+            await asyncio.sleep(60)
 
 time_check.start()
 bot.run(token)
