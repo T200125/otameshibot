@@ -20,7 +20,7 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@tasks.loop(seconds=1)
+@tasks.loop(seconds=30)
 async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
