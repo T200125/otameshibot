@@ -24,7 +24,6 @@ async def on_command_error(ctx, error):
 @tasks.loop(seconds=1)
 async def time_check():
 
-    print("loopcheck1")
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
 
     if now in dateTimeList:
