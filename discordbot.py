@@ -25,6 +25,7 @@ async def on_command_error(ctx, error):
 async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
+    print(now)
 
     if now in dateTimeList:
         print("loopcheck2")
