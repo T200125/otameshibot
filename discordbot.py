@@ -6,7 +6,6 @@ from datetime import datetime
 import asyncio
 import discord
 
-client = discord.client()
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 channel = "820269526733160451"
@@ -27,7 +26,7 @@ async def reply(message):
 
 @bot.event
 async def on_message(message):
-    if client.user in message.mentions:
+    if discord.client.user in message.mentions:
         await reply(message)
 
 @tasks.loop(seconds=1)
