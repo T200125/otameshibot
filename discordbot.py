@@ -6,6 +6,7 @@ from datetime import datetime
 import asyncio
 import discord.client
 
+client = client()
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 channel = client.get_channel(820269526733160451)
