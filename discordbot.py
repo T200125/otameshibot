@@ -23,10 +23,8 @@ async def on_command_error(ctx, error):
 
 @client.event
 async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
 
@@ -36,6 +34,9 @@ async def time_check():
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
 
     if now in dateTimeList:
+
+        channel.send('loop実行中')
+
         if datetime.now().day % 2 == 0:
 
             print(now)
@@ -45,8 +46,6 @@ async def time_check():
             print(now)
             channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
             await asyncio.sleep(60)
-    else:
-        return
 
 time_check.start()
 bot.run(token)
