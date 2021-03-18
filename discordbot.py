@@ -24,7 +24,7 @@ async def on_command_error(ctx, error):
 async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(820269526733160451)
+    channel = bot.get_channel(583304943960588298)
 
     if now in dateTimeList:
         print("loopcheck2")
