@@ -9,7 +9,6 @@ import discord
 client = discord.Client()
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-channel = bot.get_channel(820269526733160451)
 
 
 dateTimeList = ['2021/03/18 11:32', '2021/03/19 11:00', '2021/03/21 11:00', '2021/03/23 11:00', '2021/03/25 11:00', '2021/03/27 11:00', '2021/03/29 11:00', '2021/03/31 11:00', '2021/03/18 11:00', '2021/03/20 11:00', '2021/03/22 11:00', '2021/03/24 11:00', '2021/03/26 11:00', '2021/03/28 11:00', '2021/03/30 11:00']
@@ -25,6 +24,7 @@ async def on_command_error(ctx, error):
 async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
+    channel = bot.get_channel(820269526733160451)
 
     if now in dateTimeList:
         print("loopcheck2")
