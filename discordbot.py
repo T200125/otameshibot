@@ -4,11 +4,10 @@ import traceback
 from discord.ext import tasks
 from datetime import datetime
 import asyncio
-import discord
+import discord.client
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-client = discord.client()
 channel = client.get_channel(820269526733160451)
 
 
