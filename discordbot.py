@@ -38,5 +38,5 @@ async def time_check():
     else:
         return
 
-asyncio.run(time_check())
+time_check.start()
 bot.run(token)
