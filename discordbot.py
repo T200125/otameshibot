@@ -40,7 +40,7 @@ async def time_check():
 
 # 動作確認用
 @tasks.loop(seconds=30)
-async def time_check():
+await time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(820269526733160451)
