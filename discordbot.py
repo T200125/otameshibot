@@ -38,11 +38,6 @@ async def time_check():
             await channel.send('@Slaughter\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
             await asyncio.sleep(60)
 
-# 動作確認用
-@tasks.loop(seconds=30)
-await time_check():
-
-    now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(820269526733160451)
 
     if now in dateTimeList:
