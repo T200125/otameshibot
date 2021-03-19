@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['2021/03/18 11:45', '2021/03/19 11:00', '2021/03/21 11:00', '2021/03/23 11:00', '2021/03/25 11:00', '2021/03/27 11:00', '2021/03/29 11:00', '2021/03/31 11:00', '2021/03/18 11:00', '2021/03/20 11:00', '2021/03/22 11:00', '2021/03/24 11:00', '2021/03/26 11:00', '2021/03/28 11:00', '2021/03/30 11:00']
+dateTimeList = ['2021/03/18 11:45', '2021/03/19 11:15', '2021/03/21 11:00', '2021/03/23 11:00', '2021/03/25 11:00', '2021/03/27 11:00', '2021/03/29 11:00', '2021/03/31 11:00', '2021/03/18 11:00', '2021/03/20 11:00', '2021/03/22 11:00', '2021/03/24 11:00', '2021/03/26 11:00', '2021/03/28 11:00', '2021/03/30 11:00']
 
 
 @bot.event
@@ -24,7 +24,8 @@ async def on_command_error(ctx, error):
 async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(639384765962649601)
+# 動作確認用
+    channel = bot.get_channel(820269526733160451)
 
     if now in dateTimeList:
         print("loopcheck2")
@@ -37,8 +38,8 @@ async def time_check():
             print(now)
             await channel.send('@Slaughter\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
             await asyncio.sleep(60)
-# 動作確認用
-    channel = bot.get_channel(820269526733160451)
+
+    channel = bot.get_channel(639384765962649601)
 
     if now in dateTimeList:
         print("loopcheck2")
