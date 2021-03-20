@@ -25,17 +25,18 @@ async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(639384765962649601)
+    role = discord.utils.find(lambda r: r.name == 'Slaughter', channel.guild.roles)
 
     if now in dateTimeList:
         print("loopcheck2")
         if datetime.now().day % 2 == 0:
 
             print(now)
-            await channel.send('@Slaughter\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
+            await channel.send(role.mention + '\n本日のギルドマイレージは\n【パターン１】\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）\n古代遺跡５回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
         else:
             print(now)
-            await channel.send('@Slaughter\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
+            await channel.send(role.mention + '\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
             await asyncio.sleep(60)
 
 time_check.start()
