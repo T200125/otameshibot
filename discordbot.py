@@ -7,7 +7,7 @@ import asyncio
 import discord
 
 client = discord.Client()
-bot = commands.Bot()
+bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
