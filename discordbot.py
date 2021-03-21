@@ -25,7 +25,6 @@ async def time_check():
 
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(639384765962649601)
-    roleid = 559403747059695639
 
     if now in dateTimeList:
         print("loopcheck2")
