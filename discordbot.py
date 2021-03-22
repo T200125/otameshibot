@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['2021/03/19 11:00', '2021/03/21 11:00', '2021/03/23 11:00', '2021/03/25 11:00', '2021/03/27 11:00', '2021/03/29 11:00', '2021/03/31 11:00', '2021/03/18 11:00', '2021/03/20 11:00', '2021/03/22 11:00', '2021/03/24 11:00', '2021/03/26 11:00', '2021/03/28 11:00', '2021/03/30 11:00']
+dateTimeList = ['11:00']
 
 
 @bot.event
@@ -23,10 +23,11 @@ async def on_command_error(ctx, error):
 @tasks.loop(seconds=30)
 async def time_check():
 
+    check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(583304943960588298)
 
-    if now in dateTimeList:
+    if check in dateTimeList:
         print("loopcheck2")
         if datetime.now().day % 2 == 0:
 
