@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['11:00']
+dateTimeList = ['05:00']
 
 
 @bot.event
@@ -25,7 +25,7 @@ async def time_check():
 
     check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(583304943960588298)
+    channel = bot.get_channel(820269526733160451)
 
     if check in dateTimeList:
         print("loopcheck2")
