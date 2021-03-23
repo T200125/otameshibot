@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['05:00']
+dateTimeList = ['11:00']
 
 
 @bot.event
@@ -20,12 +20,12 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@tasks.loop(seconds=30)
+@tasks.loop(seconds=10)
 async def time_check():
 
     check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(820269526733160451)
+    channel = bot.get_channel(583304943960588298)
 
     if check in dateTimeList:
         print("loopcheck2")
@@ -36,7 +36,7 @@ async def time_check():
             await asyncio.sleep(60)
         else:
             print(now)
-            await channel.send('test')
+            await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
             await asyncio.sleep(60)
 
 time_check.start()
