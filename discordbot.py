@@ -36,7 +36,7 @@ async def time_check():
             await asyncio.sleep(60)
         else:
             print(now)
-            await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n闘技場へ１回入場\n闘技場へ２回入場\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡１０回完了')
+            await channel.send('test')
             await asyncio.sleep(60)
 
 time_check.start()
