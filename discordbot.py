@@ -38,6 +38,8 @@ async def time_check():
             print(now)
             await channel.send('@everyone\n本日のギルドマイレージは\n【パターン２】\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
+    else:
+        await asyncio.sleep(85800)
 
 time_check.start()
 bot.run(token)
