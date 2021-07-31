@@ -29,7 +29,7 @@ async def time_check():
 
     if check in dateTimeList:
         print("loopcheck2")
-        if datetime.now().day % 2 != 0:
+        if datetime.now().day % 2 == 0:
 
             print(now)
             await channel.send('@everyone\n本日のギルドマイレージは\n【パターン１】\n闘技場へ１回入場\n闘技場へ２回入場\nラモー戦場１回入場（ヴォルクス）\nラモー戦場１回入場（黒結晶）\nラモー戦場２回入場（ヴォルクス）\nラモー戦場２回入場（黒結晶）')
