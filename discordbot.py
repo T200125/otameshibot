@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['11:00']
+dateTimeList = ['12:10']
 
 
 @bot.event
