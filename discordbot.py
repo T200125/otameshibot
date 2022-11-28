@@ -10,10 +10,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
-intents = discord.Intents.all()
-intents.members = True
-
-client = discord.Bot(command_prefix=prefix, case_insensitive=True, self_bot=True)
+bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
