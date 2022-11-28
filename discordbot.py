@@ -6,7 +6,8 @@ from datetime import datetime
 import asyncio
 import discord
 
-prefix='*$'
+prefix = '*$'
+
 intents = discord.Intents.default()
 intents.message_content = True
 
