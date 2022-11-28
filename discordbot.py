@@ -6,7 +6,10 @@ from datetime import datetime
 import asyncio
 import discord
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix='*$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
