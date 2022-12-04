@@ -22,10 +22,9 @@ async def myfunc():
     for guild in client.guilds:
         for channel in guild.channels:
             yield channel
-            print(guild, channel)
 
 async def consume_myfunc():
-    data = [item; async for item in myfunc()]
+    data = [item async for item in myfunc()]
     print(data)
  
 asyncio.run(consume_myfunc())
