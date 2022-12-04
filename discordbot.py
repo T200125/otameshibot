@@ -30,7 +30,6 @@ async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(820269526733160451)
     print(now)
 
     if check in dateTimeList:
