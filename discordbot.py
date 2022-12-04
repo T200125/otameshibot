@@ -18,7 +18,7 @@ dateTimeList = ['13']
 for guild in client.guilds:
     for channel in guild.channels:
         print(guild, channel)
-        
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
