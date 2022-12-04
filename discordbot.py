@@ -26,7 +26,7 @@ async def myfunc():
 async def consume_myfunc():
     data = [item async for item in myfunc()]
     print(data)
- 
+
 asyncio.run(consume_myfunc())
 
 @bot.event
