@@ -18,14 +18,12 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['14:00']
 
-def myfunc():
+async def myfunc():
     for guild in client.guilds:
         for channel in guild.channels:
             yield channel
             print(guild, channel)
 
-
-myfunc()
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -49,5 +47,6 @@ async def time_check():
             await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
 
+asyncio.run(myfunc())
 asyncio.run(time_check())
 bot.run(token)
