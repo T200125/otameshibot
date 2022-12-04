@@ -19,7 +19,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 dateTimeList = ['14:00']
 
 def myfunc():
-for guild in client.guilds:
+    for guild in client.guilds:
     for channel in guild.channels:
         yield channel
         print(guild, channel)
