@@ -24,12 +24,14 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@tasks.loop(seconds=100)
+@tasks.loop(seconds=10)
 async def time_check():
 
     for guild in client.guilds:
         for channel in guild.channels:
             print(guild, channel)
+
+await asyncio.sleep(100)
 
 asyncio.run(time_check())
 bot.run(token)
