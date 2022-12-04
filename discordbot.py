@@ -18,13 +18,13 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['14:00']
 
-async def myfunc()
+def myfunc():
 for guild in client.guilds:
     for channel in guild.channels:
         yield channel
         print(guild, channel)
 
-asyncio.run(myfunc())
+myfunc()
 
 @bot.event
 async def on_command_error(ctx, error):
