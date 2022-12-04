@@ -24,11 +24,8 @@ async def myfunc():
             yield channel
             await asyncio.sleep(1)
 
-async def consume_myfunc():
-    data = [item async for item in myfunc()]
-    print(data)
 
-asyncio.run(consume_myfunc())
+run(myfunc())
 
 @bot.event
 async def on_command_error(ctx, error):
