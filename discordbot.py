@@ -33,7 +33,6 @@ async def time_check():
             print(guild, channel)
             yield channel
 
-
     check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(1042432423058743356)
