@@ -1,9 +1,6 @@
 from discord.ext import commands
 import os
 import traceback
-from discord.ext import tasks
-from datetime import datetime
-import asyncio
 import discord
 
 prefix = '*$'
@@ -18,14 +15,15 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['13']
 
-
+for guild in client.guilds:
+    for channel in guild.channels:
+        print(guild, channel)
+        
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-for guild in client.guilds:
-    for channel in guild.channels:
-        print(guild,channel)
+
 bot.run(token)
