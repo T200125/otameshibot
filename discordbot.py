@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_in
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['11:42']
+dateTimeList = ['12:00']
 
 
 @bot.event
