@@ -18,18 +18,8 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['14:00']
 
-async def myfunc():
-    for guild in client.guilds:
-        for channel in guild.channels:
-            yield channel
-            await asyncio.sleep(1)
-
-async def consume_myfunc():
-    data = [item async for item in myfunc()]
-    print(data)
- 
-asyncio.run(consume_myfunc())
-
+channelid=client.get_all_channels
+print(channelid)
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
