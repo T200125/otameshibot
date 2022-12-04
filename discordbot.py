@@ -34,7 +34,7 @@ async def time_check():
         if datetime.now().day % 2 == 0:
 
             print(now)
-            await message.channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
 
 asyncio.run(time_check())
