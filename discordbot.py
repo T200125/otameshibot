@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_in
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['11:00']
+dateTimeList = ['11:42']
 
 
 @bot.event
@@ -30,7 +30,7 @@ async def time_check():
 
     check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(1042432423058743356)
+    channel = bot.get_channel(820269526733160451)
     print(now)
 
     if check in dateTimeList:
