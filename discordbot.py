@@ -30,8 +30,7 @@ async def time_check():
     for guild in client.guilds:
         for channel in guild.channels:
             print(guild, channel)
-
-await asyncio.sleep(100)
+            yield channel
 
 asyncio.run(time_check())
 bot.run(token)
