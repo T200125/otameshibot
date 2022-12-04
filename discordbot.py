@@ -18,9 +18,12 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['14:00']
 
-channelid = client.get_all_channels
+text_channel_list = []
+for guild in bot.guilds:
+    for channel in guild.text_channels:
+        text_channel_list.append(channel)
 
-print(channelid)
+print(text_channel_list)
 
 @bot.event
 async def on_command_error(ctx, error):
