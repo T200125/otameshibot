@@ -24,6 +24,7 @@ def myfunc():
             yield channel
             print(guild, channel)
 
+
 myfunc()
 
 @bot.event
