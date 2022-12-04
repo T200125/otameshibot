@@ -8,7 +8,7 @@ import discord
 
 prefix = '*$'
 
-client = discord.Client(intents=intents)
+client = discord.Client()
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
 
