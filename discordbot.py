@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_in
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['12:00']
+dateTimeList = ['12']
 
 
 @bot.event
@@ -24,7 +24,7 @@ async def on_command_error(ctx, error):
 @tasks.loop(seconds=10)
 async def time_check():
 
-    check = datetime.now().strftime('%H:%M')
+    check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = bot.get_channel(820269526733160451)
     print(now)
