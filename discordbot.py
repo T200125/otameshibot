@@ -27,5 +27,5 @@ async def on_command_error(ctx, error):
 
 for guild in client.guilds:
     for channel in guild.channels:
-        print(channel)
+        print(guild,channel)
 bot.run(token)
