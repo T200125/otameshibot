@@ -31,7 +31,6 @@ async def time_check():
     for guild in client.guilds:
         for channel in guild.channels:
             print(guild, channel)
-            yield channel
 
     check = datetime.now().strftime('%H:%M')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
