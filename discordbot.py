@@ -8,6 +8,10 @@ import discord
 
 prefix = '*$'
 
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
 
@@ -34,7 +38,7 @@ async def time_check():
         if datetime.now().day % 2 == 0:
 
             print(now)
-            await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            await client.channels.cache.get('820269526733160451').send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
 
 asyncio.run(time_check())
