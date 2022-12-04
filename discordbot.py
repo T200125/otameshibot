@@ -32,5 +32,5 @@ async def time_check():
             print(guild, channel)
             yield channel
 
-asyncio.run(time_check)
+asyncio.run(time_check())
 bot.run(token)
