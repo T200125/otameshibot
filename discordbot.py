@@ -16,8 +16,13 @@ bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_in
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # UTC
-dateTimeList = ['14']
+dateTimeList = ['14:00']
 
+
+for guild in client.guilds:
+    for channel in guild.channels:
+        yield channel
+        print(guild, channel)
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -27,10 +32,6 @@ async def on_command_error(ctx, error):
 
 @tasks.loop(seconds=10)
 async def time_check():
-
-    for guild in client.guilds:
-        for channel in guild.channels:
-            print(guild, channel)
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
