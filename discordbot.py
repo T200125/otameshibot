@@ -32,5 +32,20 @@ async def time_check():
             print(guild, channel)
             yield channel
 
+
+    check = datetime.now().strftime('%H:%M')
+    now = datetime.now().strftime('%Y/%m/%d %H:%M')
+    channel = bot.get_channel(1042432423058743356)
+    print(now)
+
+    if check in dateTimeList:
+        print("loopcheck2")
+        if datetime.now().day % 2 == 0:
+
+            print(now)
+            await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            await asyncio.sleep(60)
+
+
 asyncio.run(time_check())
 bot.run(token)
