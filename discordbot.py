@@ -20,9 +20,9 @@ dateTimeList = ['14:00']
 
 def myfunc():
     for guild in client.guilds:
-    for channel in guild.channels:
-        yield channel
-        print(guild, channel)
+        for channel in guild.channels:
+            yield channel
+            print(guild, channel)
 
 myfunc()
 
