@@ -30,7 +30,7 @@ async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel('820269526733160451')
+    Channel = bot.get_channel('820269526733160451')
     print(now)
 
     if check in dateTimeList:
@@ -38,7 +38,7 @@ async def time_check():
         if datetime.now().day % 2 == 0:
 
             print(now)
-            await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            await Channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             await asyncio.sleep(60)
 
 asyncio.run(time_check())
