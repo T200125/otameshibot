@@ -22,6 +22,7 @@ async def myfunc():
     for guild in client.guilds:
         for channel in guild.channels:
             yield channel
+            await asyncio.sleep(1)
 
 async def consume_myfunc():
     data = [item async for item in myfunc()]
