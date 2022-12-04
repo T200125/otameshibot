@@ -2,7 +2,6 @@ from discord.ext import commands
 import os
 import traceback
 from discord.ext import tasks
-from datetime import datetime
 import asyncio
 import discord
 
