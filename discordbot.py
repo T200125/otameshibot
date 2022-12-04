@@ -18,8 +18,10 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # UTC
 dateTimeList = ['14:00']
 
-channelid=client.get_all_channels
+channelid = client.get_all_channels
+
 print(channelid)
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
