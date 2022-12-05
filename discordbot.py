@@ -41,7 +41,7 @@ async def time_check():
 
     if check in dateTimeList:
         print("loopcheck2")
-        if datetime.now().day % 2 == 0:
+        if datetime.now().day % 2 == 1:
             print(now)
             await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             print('message sent')
