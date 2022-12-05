@@ -20,8 +20,8 @@ dateTimeList = ['14:00']
 
 text_channel_list = []
 for guild in bot.guilds:
-    for channel in guild.text_channels:
-        text_channel_list.append(channel.name)
+    for channel in guild.channels:
+        text_channel_list.append(channel)
 
 print(text_channel_list)
 
