@@ -31,6 +31,19 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+@client.event
+async def on_message(message):
+    # 送信者がbotである場合は弾く
+    if message.author.bot:
+        return 
+    # メッセージの本文が 鳴いて だった場合
+    if message.content == "test":
+        # 送信するメッセージをランダムで決める
+        content = 'test'
+        # メッセージが送られてきたチャンネルに送る
+        await message.channel.send(content)
+
+
 @tasks.loop(seconds=10)
 async def time_check():
 
@@ -38,6 +51,7 @@ async def time_check():
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     channel = client.get_channel(1048971317875048489)
     print(now)
+    print(channel)
 
     if check in dateTimeList:
         print("loopcheck2")
@@ -49,3 +63,4 @@ async def time_check():
 
 asyncio.run(time_check())
 bot.run(token)
+client.run(token)
