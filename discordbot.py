@@ -14,7 +14,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
-channel_id = 599260116612808724
+channel_id = 1048971317875048489
 
 # UTC
 dateTimeList = ['06']
@@ -38,7 +38,7 @@ async def time_check():
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     print(now)
-    channel = bot.get_channel(channel_id)
+    channel = bot.get_channel('channel_id')
 
     if check in dateTimeList:
         print("loopcheck2")
