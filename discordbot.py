@@ -17,7 +17,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 channel_id = 1048971317875048489
 
 # UTC
-dateTimeList = ['5']
+dateTimeList = ['05']
 
 text_channel_list = []
 for guild in bot.guilds:
@@ -32,13 +32,17 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+
+async def channelid():
+    await bot.fetch_channel(channel_id)
+    yield
+
 @tasks.loop(seconds=10)
 async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(channel_id)
-    print(now)
+    channel = channelid()
     print(channel)
 
     if check in dateTimeList:
