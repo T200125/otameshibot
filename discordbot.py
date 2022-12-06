@@ -32,16 +32,12 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-async def channelid():
-    await bot.fetch_channel(channel_id)
-    yield
-
 @tasks.loop(seconds=10)
 async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = channelid()
+    channel = bot.get_channel(channel_id)
     print(now)
     print(channel)
 
@@ -53,6 +49,5 @@ async def time_check():
             print('message sent')
             await asyncio.sleep(60)
 
-asyncio.run(channelid())
 asyncio.run(time_check())
 bot.run(token)
