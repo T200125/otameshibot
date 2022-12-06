@@ -32,12 +32,13 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+channel = bot.get_channel(channel_id)
+
 @tasks.loop(seconds=10)
 async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = bot.get_channel(channel_id)
     print(channel)
 
     if check in dateTimeList:
