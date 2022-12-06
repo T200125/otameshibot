@@ -53,5 +53,6 @@ async def time_check():
             print('message sent')
             await asyncio.sleep(60)
 
+asyncio.run(channelid())
 asyncio.run(time_check())
 bot.run(token)
