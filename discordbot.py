@@ -33,7 +33,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 @tasks.before_loop
-def channelid()
+def channelid():
     channel = bot.get_channel(channel_id)
 
 @tasks.loop(seconds=10)
