@@ -17,7 +17,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 channel_id = 1048971317875048489
 
 # UTC
-dateTimeList = ['05']
+dateTimeList = ['06']
 
 text_channel_list = []
 for guild in bot.guilds:
@@ -31,26 +31,23 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-class CyCog(commands.Cog):
 
-    @tasks.before_loop
-    def channelid():
-        channel = bot.get_channel(channel_id)
+@tasks.loop(seconds=10)
+async def time_check():
 
-    @tasks.loop(seconds=10)
-    async def time_check():
+    check = datetime.now().strftime('%H')
+    now = datetime.now().strftime('%Y/%m/%d %H:%M')
+    channel = client.get_channel(channel_id)
+    print(now)
+    print(channel)
 
-        check = datetime.now().strftime('%H')
-        now = datetime.now().strftime('%Y/%m/%d %H:%M')
-        print(channel)
-
-        if check in dateTimeList:
-            print("loopcheck2")
-            if datetime.now().day % 2 == 0:
-                print(now)
-                await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
-                print('message sent')
-                await asyncio.sleep(60)
+    if check in dateTimeList:
+        print("loopcheck2")
+        if datetime.now().day % 2 == 0:
+            print(now)
+            await channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            print('message sent')
+            await asyncio.sleep(60)
 
 asyncio.run(time_check())
 bot.run(token)
