@@ -15,9 +15,10 @@ client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
 channel_id = 1048971317875048489
+print(discord.__version__)
 
 # UTC
-dateTimeList = ['06']
+dateTimeList = ['6']
 
 text_channel_list = []
 for guild in bot.guilds:
