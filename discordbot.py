@@ -15,10 +15,9 @@ client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
 channel_id = 1048971317875048489
-print(discord.__version__)
 
 # UTC
-dateTimeList = ['6']
+dateTimeList = ['06']
 
 text_channel_list = []
 for guild in bot.guilds:
@@ -39,12 +38,13 @@ async def time_check():
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
     print(now)
+    channel = bot.get_channel('channelid')
 
     if check in dateTimeList:
         print("loopcheck2")
         if datetime.now().day % 2 == 0:
             print(now)
-            bot.send_message(bot.get_channel(channel_id), '@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
             print('message sent')
             await asyncio.sleep(60)
 
