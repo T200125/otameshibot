@@ -32,7 +32,9 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-channel = bot.get_channel(channel_id)
+@tasks.before_loop
+def channelid()
+    channel = bot.get_channel(channel_id)
 
 @tasks.loop(seconds=10)
 async def time_check():
