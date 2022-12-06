@@ -54,4 +54,3 @@ async def time_check():
 
 asyncio.run(time_check())
 bot.run(token)
-client.run(token)
