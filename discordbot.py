@@ -14,7 +14,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
-channel_id = 1048971317875048489
+channel_id = 599260116612808724
 
 # UTC
 dateTimeList = ['06']
@@ -44,9 +44,9 @@ async def time_check():
         print("loopcheck2")
         if datetime.now().day % 2 == 0:
             print(now)
-            channel.send('@everyone\n本日のギルドマイレージは\n薬草を５回採集する\n石を５回採鉱する\n木を５回伐採する\n古代遺跡５回完了\n古代遺跡１０回完了\n古代遺跡１５回完了')
+            channel.send('test')
             print('message sent')
-            await asyncio.sleep(60)
+            await asyncio.sleep(600)
 
 asyncio.run(time_check())
 bot.run(token)
