@@ -14,6 +14,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), case_insensitive=True, self_bot=True)
 token = os.environ['DISCORD_BOT_TOKEN']
+channel_id = 1048971317875048489
 
 # UTC
 dateTimeList = ['15']
@@ -31,25 +32,15 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    # 送信者がbotである場合は弾く
-    if message.author.bot:
-        return
-    # メッセージの本文が 鳴いて だった場合
-    if message.content == "test":
-        # 送信するメッセージをランダムで決める
-        content = 'test'
-        # メッセージが送られてきたチャンネルに送る
-        await message.channel.send(content)
-
+def channelid()
+    await fetch_channel(channel_id)
 
 @tasks.loop(seconds=10)
 async def time_check():
 
     check = datetime.now().strftime('%H')
     now = datetime.now().strftime('%Y/%m/%d %H:%M')
-    channel = client.get_channel(1048971317875048489)
+    channel = channelid()
     print(now)
     print(channel)
 
