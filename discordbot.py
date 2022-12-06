@@ -35,7 +35,7 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     # 送信者がbotである場合は弾く
     if message.author.bot:
-        return 
+        return
     # メッセージの本文が 鳴いて だった場合
     if message.content == "test":
         # 送信するメッセージをランダムで決める
